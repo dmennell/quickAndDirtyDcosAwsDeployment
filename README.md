@@ -10,7 +10,7 @@ Install HomeBrew first
 - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 Install Required Packages
-- `brew install git terraform awscli
+- `brew install git terraform awscli`
 
 ### Create & Add SSH keys
 If you already have an ssh key you would like to use, that is fine, but you will need to make sure to execute the ssh-add step, and modify line 20 of the main.tf file accordingly.  This SSH key will be used to SSH into the Linux nodes if necessary.
@@ -23,7 +23,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ## Install DC/OS on AWS
 
-###Prepare Files for Deployment:
+### Prepare Files for Deployment:
 - Create a new directory somewhere
 - Place the supplied "make.tf" and "license.txt" files in this directory
     - Modify the make.tf file as desired:
@@ -47,12 +47,12 @@ execute one of the following commands to set the AWS region for deployment
 -  `terraform init -upgrade=true`
 
 ### Create Deployment Plan
+If successful, the process will end by giving you the IP addresses of the master nodes and appropriate Load Balancers.
 -  `terraform plan -out plan.out`
 
 ### Apply Deployment Plan
 -  `terraform apply plan.out`
--  The deployment will create text files in your directory, one for each cluster, created including ELB addresses, public IP's for all nodes, login credentials, and cluster name.
-
+-  
 ## Cluster Tear-Down
 Make sure to keep a copy of the directory you created as it will be needed for tearing down your DC/OS cluster and all related resources
 
@@ -60,8 +60,8 @@ Make sure to keep a copy of the directory you created as it will be needed for t
 -  However you authenticated with AWS before, your credentials may have expired
 
 ### Reset AWS Region
-execute one of the following commands to set the AWS region for deployment in case you set another one as default since deploying this cluster
-`export AWS_DEFAULT_REGION="<desired-aws-region>"'`
+execute one of the following commands to set the AWS region for deployment in case you set another one as default since deploying this cluster.
+- `export AWS_DEFAULT_REGION="<desired-aws-region>"`
     examples
     ```
     export AWS_DEFAULT_REGION="us-east-1"
