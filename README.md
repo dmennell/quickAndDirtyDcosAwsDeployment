@@ -25,7 +25,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ### Prepare Files for Deployment:
 - Create a new directory somewhere
-- Place the supplied "make.tf" and "license.txt" files in this directory
+- Place the supplied "main.tf" and "license.txt" files in this directory
 - Navigate Terminal session to the newly created directory that includes the make.tf and license.txt file
     - Modify the make.tf file as desired:
         - Line 19: Give your cluster a name.  this name will be used to create the AWS nodes as well as DC/OS Cluster (lower case characters and dashes only please)
