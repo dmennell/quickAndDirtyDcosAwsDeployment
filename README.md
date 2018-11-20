@@ -37,39 +37,40 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 ### Set AWS Region
 execute one of the following commands to set the AWS region for deployment
 `export AWS_DEFAULT_REGION="<desired-aws-region>"'`
-    examples
-    ```
-    export AWS_DEFAULT_REGION="us-east-1"
-    export AWS_DEFAULT_REGION="us-west-2"
-    ```
+    
+    Examples:
+    - `export AWS_DEFAULT_REGION="us-east-1"`
+    - `export AWS_DEFAULT_REGION="us-west-2"`
 
 ### Initialize Terraform Deployment
 -  `terraform init -upgrade=true`
 
 ### Create Deployment Plan
-Th
+This step creates and validates the deployment plan
 -  `terraform plan -out plan.out`
 
 ### Apply Deployment Plan
 this step will take some time, but if successful, the process will end by giving you the IP addresses of the master nodes and appropriate Load Balancers.
 -  `terraform apply plan.out`
 
-## Cluster Tear-Down
 Make sure to keep a copy of the directory you created as it will be needed for tearing down your DC/OS cluster and all related resources
+
+## Cluster Tear-Down
+Once you are done with your cluster, you will need to tear it, along with all the other created resources, down.  Make sure your terminal is navigated to the directory that you created at the beginning of this step.
 
 ### refresh credentials if necessary
 -  However you authenticated with AWS before, your credentials may have expired
 
 ### Reset AWS Region
-execute one of the following commands to set the AWS region for deployment in case you set another one as default since deploying this cluster.
+Execute one of the following commands to set the AWS region for deployment in case you set another one as default since deploying this cluster.
 - `export AWS_DEFAULT_REGION="<desired-aws-region>"`
-    examples
-    ```
-    export AWS_DEFAULT_REGION="us-east-1"
-    export AWS_DEFAULT_REGION="us-west-2"
-    ```
+    
+    Examples
+    - `export AWS_DEFAULT_REGION="us-east-1"`
+    - `export AWS_DEFAULT_REGION="us-west-2"`
 
 ### Destroy
+This step executes the cluster teardown process.  when prompted, answer "yes" to confirm that you want to destroy everything.
 -  `terraform destroy`
 
 Once you have confirmed that the cluster and all associated resources have been destroyed via the AWS console, it safe to delete the created dirtectory if so desired.
