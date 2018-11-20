@@ -26,13 +26,13 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 ### Prepare Files for Deployment:
 - Create a new directory somewhere
 - Place the supplied "make.tf" and "license.txt" files in this directory
+- Navigate Terminal session to the newly created directory that includes the make.tf and license.txt file
     - Modify the make.tf file as desired:
         - Line 19: Give your cluster a name.  this name will be used to create the AWS nodes as well as DC/OS Cluster (lower case characters and dashes only please)
         - Line 23: Select number of masters (must be odd number eg 1, 3, 5)
         - Line 24: Select number of Private Agents (this is the primary worker node)
         - Line 25: Select number of Public Agents (provide ingress to DC/OS cluster)
         - Lines 27-30: Select Instance types for each node type (included recommendations work well)
-- Navigate Terminal session to the newly created directory that includes the make.tf and license.txt file
 
 ### Set AWS Region
 execute one of the following commands to set the AWS region for deployment
