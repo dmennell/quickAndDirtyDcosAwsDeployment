@@ -36,8 +36,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ### Set AWS Region
 execute one of the following commands to set the AWS region for deployment
-`export AWS_DEFAULT_REGION="<desired-aws-region>"'`
-    
+- `export AWS_DEFAULT_REGION="<desired-aws-region>"'`
     Examples:
     - `export AWS_DEFAULT_REGION="us-east-1"`
     - `export AWS_DEFAULT_REGION="us-west-2"`
