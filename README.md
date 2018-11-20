@@ -21,7 +21,7 @@ If you already have an ssh key you would like to use, that is fine, but you will
 depending on your method to authenticate with AWS, this step may be different.  At Mesosphere, we use a utility that genertates temp credentials that expire.  Your organization may have its own mechanism.  Here is a link that covers setting up the AWScli:
 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
-## Install DC/OS on AWS
+## INSTALL ENTERPRISE DC/OS ON AWS 
 
 ### Prepare Files for Deployment:
 - Create a new directory somewhere
