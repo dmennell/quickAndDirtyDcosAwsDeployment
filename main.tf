@@ -36,6 +36,7 @@ module "dcos" {
   # dcos_variant = "open"
 
   dcos_install_mode = "${var.dcos_install_mode}"
+  dcos_resolvers      = "\n   - 169.254.169.253"
 }
 
 output "masters-ips" {
