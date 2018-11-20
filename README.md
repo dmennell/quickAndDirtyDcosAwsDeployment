@@ -47,12 +47,13 @@ execute one of the following commands to set the AWS region for deployment
 -  `terraform init -upgrade=true`
 
 ### Create Deployment Plan
-If successful, the process will end by giving you the IP addresses of the master nodes and appropriate Load Balancers.
+Th
 -  `terraform plan -out plan.out`
 
 ### Apply Deployment Plan
+this step will take some time, but if successful, the process will end by giving you the IP addresses of the master nodes and appropriate Load Balancers.
 -  `terraform apply plan.out`
--  
+
 ## Cluster Tear-Down
 Make sure to keep a copy of the directory you created as it will be needed for tearing down your DC/OS cluster and all related resources
 
@@ -68,7 +69,7 @@ execute one of the following commands to set the AWS region for deployment in ca
     export AWS_DEFAULT_REGION="us-west-2"
     ```
 
-### destroy
+### Destroy
 -  `terraform destroy`
 
 Once you have confirmed that the cluster and all associated resources have been destroyed via the AWS console, it safe to delete the created dirtectory if so desired.
