@@ -1,16 +1,39 @@
 # Quick & Dirty DC/OS Deployment on AWS
 This is meant to be a quick and dirty set of instructions to deploy DC/OS on AWS using the Terraform Installer.  It includes many common variables in the main.tf file.
 
+## LESSONS LEARNED
+- Make sure you have enough available instances on AWS to dully deploy your cluster.  If not, the cluster build will fail prior to completion and you will meed to destroy, modify, and re-run.
+- Make sure the user credentials have the rights to create all the resource types for the cluster.
+- If a build fails for some reason, make sure that the cluster is completely destroyed (terraform destroy) before creating the new one.  Otherwise, your build might fail.
+
 ## PREREQUISITES & DOWNLOAD
 these instructions assume that you are using a mac as your desktop.  If you are using Windows, Linux, or Solaris, please adjust accordingly
 
 ### Install Dependencies
 
-Install HomeBrew first
-- `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+#### MacOS
+    Install HomeBrew first
+    - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    
+    Install Required Packages
+    - `brew install git terraform awscli`
+    
+#### Linux
+    Terraform
+    - Download Terraform - https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
+    - Install Terraform - https://www.terraform.io/intro/getting-started/install.html
+    
+    AWS-CLI
+    - Download/Install AWS-CLI - https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux.html
 
-Install Required Packages
-- `brew install git terraform awscli`
+#### Windows
+    Terraform
+    - Download Terraform - https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_windows_amd64.zip
+    - Install Terraform - https://www.terraform.io/intro/getting-started/install.html
+    
+    AWS-CLI
+    - Download AWS-CLI - https://s3.amazonaws.com/aws-cli/AWSCLI64PY3.msi
+    - Install AWS-CLI - https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html
 
 ### Create & Add SSH keys
 If you already have an ssh key you would like to use, that is fine, but you will need to make sure to execute the ssh-add step, and modify line 20 of the main.tf file accordingly.  This SSH key will be used to SSH into the Linux nodes if necessary.
