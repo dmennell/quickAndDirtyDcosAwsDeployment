@@ -12,6 +12,9 @@ these instructions assume that you are using a mac as your desktop.  If you are 
 ### Install Dependencies
 
 #### MacOS
+    Install X-Code command Line Tools
+    - `xcode-select --install`
+
     Install HomeBrew first
     - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
     
