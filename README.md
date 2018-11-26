@@ -12,14 +12,14 @@ these instructions assume that you are using a mac as your desktop.  If you are 
 ### Install Dependencies
 
 #### MacOS
-    Install X-Code command Line Tools
-    - `xcode-select --install`
+Install X-Code command Line Tools
+- `xcode-select --install`
 
-    Install HomeBrew first
-    - `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+Install HomeBrew first
+- `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
     
-    Install Required Packages
-    - `brew install git terraform awscli`
+Install Required Packages
+- `brew install git terraform awscli`
     
 #### Linux
     Terraform
