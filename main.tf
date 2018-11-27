@@ -18,7 +18,7 @@ module "dcos" {
   dcos_instance_os    = "centos_7.5"
   cluster_name        = "testbadger" 
   ssh_public_key_file = "~/.ssh/id_rsa.pub"
-  admin_ips           = ["${data.http.whatismyip.body}/32"]
+  admin_ips           = ["0.0.0.0/0"]
 
   num_masters        = "3"
   num_private_agents = "5"
@@ -28,7 +28,7 @@ module "dcos" {
   public_agents_instance_type = "m4.xlarge"
   private_agents_instance_type = "m4.2xlarge"
   masters_instance_type = "m4.xlarge"
-  availability_zones = ["us-east-1a","us-east-1b","us-east-1c"]
+  #availability_zones = ["us-east-1a","us-east-1b","us-east-1c"]
   dcos_version = "1.12.0"
 
   dcos_variant              = "ee"
